@@ -4,7 +4,8 @@
              xmlns:pages="clr-namespace:Orders.Pages;assembly=Orders"
              x:Class="Orders.Pages.MasterPage">
     <MasterDetailPage.Master>
-        <pages:MenuPage></pages:MenuPage>
+        <pages:MenuPage>
+        </pages:MenuPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage x:Name="Navigator">

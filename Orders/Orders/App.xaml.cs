@@ -10,7 +10,7 @@ namespace Orders
 {
     public partial class App : Application
     {
-        public static INavigation Navigator { get; internal set; }
+        public static NavigationPage Navigator { get; internal set; }
 
         public App()
         {

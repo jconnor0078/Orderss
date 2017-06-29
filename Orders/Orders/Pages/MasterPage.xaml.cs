@@ -20,7 +20,7 @@ namespace Orders.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            App.Navigator = this.Navigation;
+            App.Navigator = this.Navigator;
         }
     }
 }
