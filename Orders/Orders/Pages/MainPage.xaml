@@ -4,8 +4,13 @@
              x:Class="Orders.Pages.MainPage"
              BackgroundColor="{StaticResource BackgroundColor}"
              >
-
     <Label Text="Main Menu" TextColor="{StaticResource FontColor}"
                    VerticalOptions="Center" HorizontalOptions="Center"/>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_action_add.png">
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
       
 </ContentPage>

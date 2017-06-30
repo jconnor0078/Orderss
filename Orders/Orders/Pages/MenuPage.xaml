@@ -3,10 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Orders.Pages.MenuPage"
              Title="Menu"
-             BackgroundColor="{StaticResource MenuColor}">
+             Icon="ic_action_menu.png"
+             BackgroundColor="{StaticResource MenuColor}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
+    <ListView
+        ItemsSource="{Binding Menu}"
+        HasUnevenRows="True" 
+        >
+        <ListView.Header>
+            <ListView.ItemTemplate>
+               
+            </ListView.ItemTemplate>
+            <StackLayout  Padding="10,5,0,5" BackgroundColor="LightSeaGreen">
+                <Image Source="Header.jpg" />
+                <Label Text="Header" />
+                <Label Text="Subhead" FontSize="Small"/>
+            </StackLayout>
+        </ListView.Header>
 
-    <Label Text="Menu" TextColor="{StaticResource MenuFontColor}"
-                VerticalOptions="Center" HorizontalOptions="Center"/>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            Source="{Binding Icon}"></Image>
+                        <Label 
+                            Grid.Column="1"
+                            TextColor="{StaticResource MenuFontColor}"
+                            VerticalOptions="Center"
+                            Text="{Binding Title}"></Label>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+        <!-- End Group Header Customization-->
+    </ListView>
 
 </ContentPage>
