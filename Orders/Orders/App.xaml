@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			  xmlns:infra="clr-namespace:Orders.Infrastucture;assembly=Orders"
+			 xmlns:infra="clr-namespace:Orders.Infrastucture;assembly=Orders"
 			 x:Class="Orders.App">
 	<Application.Resources>
 		<!-- Application resource dictionary -->
@@ -12,8 +12,8 @@
 			<Color x:Key="AccentColor1">#cdff00</Color>
 			<Color x:Key="AccentColor2">#b8b89f</Color>
 			<Color x:Key="BackgroundColor">#f9f9f9</Color>
-			<!--Menu Colors-->
-			<Color x:Key="MenuColor">#52656b</Color>
+			<!--Menu Colors 0080FF #2E9AFE    -->
+			<Color x:Key="MenuColor">#2E9AFE</Color>
 			<Color x:Key="MenuFontColor">#ffffff</Color>
 			<!--Locator-->
 			<infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>

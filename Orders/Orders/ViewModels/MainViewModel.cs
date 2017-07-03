@@ -12,9 +12,11 @@ namespace Orders.ViewModels
         public MainViewModel()
         {
             LoadMenu();
+            LoadData();
         }
 
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
+        public ObservableCollection<OrderViewModel> Orders { get; set; }
 
         private void LoadMenu()
         {
@@ -48,7 +50,19 @@ namespace Orders.ViewModels
                 PageName = "SettingsPage"
             });
         }
+        private void LoadData()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Orders.Add(new OrderViewModel()
+                {
+                    Title = "Lorem Ipsum" + i.ToString(),
+                    Description = "Esta es una Descripció corta del Producto" + i.ToString(),
+                    DeliveryDate = DateTime.Today
+                });
+            }
+        }
 
-       
+
     }
 }
