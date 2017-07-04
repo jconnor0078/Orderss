@@ -9,19 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace Orders.Pages
 {
-   
-    public partial class MasterPage : MasterDetailPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AlarmsPage : ContentPage
     {
-        public MasterPage()
+        public AlarmsPage()
         {
             InitializeComponent();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            App.Master = this;
-            App.Navigator = this.Navigator;
         }
     }
 }

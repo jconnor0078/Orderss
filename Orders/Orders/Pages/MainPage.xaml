@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Orders.Pages.MainPage"
+            
              BackgroundColor="{StaticResource BackgroundColor}"
              Title="Mis Pedidos"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             >
-    <!--<ListView
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ListView
         ItemsSource="{Binding Orders}"
         HasUnevenRows="True">
         <ListView.ItemTemplate>
@@ -38,7 +38,7 @@
                             <Label 
                             VerticalOptions="Center"
                             TextColor="{StaticResource MainColor}"
-                            Text="{Binding DeliveryDate, StringFormat='yyy/MM/dd'}"></Label>
+                            Text="{Binding DeliveryDate, StringFormat='{0:yyy/MM/dd}'}"></Label>
                             
                         </StackLayout>
                       
@@ -46,12 +46,12 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>-->
+    </ListView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="ic_action_add.png">
-            
+        <ToolbarItem Icon="ic_action_add.png" Command="{Binding GoToCommand}" CommandParameter="NewOrderPage">
+
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-      
+
 </ContentPage>
