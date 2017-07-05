@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:Orders.Pages;assembly=Orders"
              x:Class="Orders.Pages.MasterPage">
-    <MasterDetailPage.Master>
+    <MasterDetailPage.Master >
         <pages:MenuPage></pages:MenuPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="Navigator"
-                        BackgroundColor="{StaticResource MainColor}">
+        <NavigationPage  BarBackgroundColor="{StaticResource MainColor}" x:Name="Navigator">
             <x:Arguments>
                 <pages:MainPage>
                 </pages:MainPage>
@@ -18,3 +17,5 @@
     </MasterDetailPage.Detail>
  
 </MasterDetailPage>
+    
+ 

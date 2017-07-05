@@ -17,7 +17,7 @@ namespace Orders.ViewModels
         
         public MainViewModel()
         {
-            navigationService = new NavigationServices();
+            navigationService = new Orders.Services.NavigationServices();
             LoadMenu();
             LoadData();
         }
@@ -37,6 +37,14 @@ namespace Orders.ViewModels
             }
         }
 
+        public ICommand StartCommand
+        {
+            get
+            {
+                return new RelayCommand(Start);
+            }
+        }
+
         private void GoTo(string pageName)
         {
             navigationService.Navigate(pageName);
@@ -45,6 +53,11 @@ namespace Orders.ViewModels
         #endregion
 
         #region Method
+
+        private void Start()
+        {
+            navigationService.SetMainPage("MasterPage");
+        }
         private void LoadMenu()
         {
             Menu = new ObservableCollection<MenuItemViewModel>();
@@ -90,6 +103,8 @@ namespace Orders.ViewModels
                 });
             }
         }
+
+     
         #endregion
 
 

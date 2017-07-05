@@ -27,9 +27,15 @@ namespace Orders.Services
                     await Navigate(new SettingsPage());
                     break;
 
+                case "NewOrderPage":
+                    await Navigate(new NewOrderPage());
+                    break;
+
                 case "MainPage":
                     await App.Navigator.PopToRootAsync();
                     break;
+
+               
                 default:
                     break;
             }
@@ -37,12 +43,24 @@ namespace Orders.Services
 
         private static async Task Navigate<T>(T page) where T: Page
         {
+     
             NavigationPage.SetHasBackButton(page, false);
             NavigationPage.SetBackButtonTitle(page, "Atrás"); //IOS
-
+       
             await App.Navigator.PushAsync(page);
         }
 
-
+        internal void SetMainPage(string pageName)
+        {
+            switch (pageName)
+            {
+                case "MasterPage":
+                    App.Current.MainPage = new MasterPage();
+                    break;
+                default:
+                    break;
+            }
+            
+        }
     }
 }

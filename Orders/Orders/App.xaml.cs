@@ -18,7 +18,7 @@ namespace Orders
             InitializeComponent();
 
             //  MainPage = new Orders.MainPage();
-            MainPage = new MasterPage();
+            MainPage = new WelcomePage();
         }
 
         protected override void OnStart()
