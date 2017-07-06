@@ -12,7 +12,14 @@ namespace Orders.Services
 {
     public class ApiService
     {
+        IMobileServiceTable<TodoItem> todoTable;
+        MobileServiceClient client;
 
+        public TodoItemManager()
+        {
+            client = new MobileServiceClient(Constants.ApplicationURL);
+            todoTable = client.GetTable<TodoItem>();
+        }
         public async Task<List<Order>> GetAllOrders()
         {
             var handler = new HttpClientHandler { Credentials= new NetworkCredential("jconnor","Jjcf0078")};
