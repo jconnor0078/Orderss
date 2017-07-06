@@ -14,12 +14,15 @@ namespace Orders.ViewModels
     public class MainViewModel
     {
         NavigationServices navigationService;
+        ApiService apiService;
         
         public MainViewModel()
         {
             navigationService = new Orders.Services.NavigationServices();
+            apiService = new ApiService();
+            Orders = new ObservableCollection<OrderViewModel>();
             LoadMenu();
-            LoadData();
+            //LoadData();
         }
 
         #region Properties
@@ -54,8 +57,19 @@ namespace Orders.ViewModels
 
         #region Method
 
-        private void Start()
+        private async void Start()
         {
+            var list = await apiService.GetAllOrders();
+            Orders.Clear();
+            foreach (var item in list)
+            {
+                Orders.Add(new OrderViewModel()
+                {
+                    Title= item.Title,
+                    DeliveryDate= item.DeliveryDate!=null?item.DeliveryDate.Value:DateTime.MinValue,
+                    Description= item.Description
+                });
+            }
             navigationService.SetMainPage("MasterPage");
         }
         private void LoadMenu()
@@ -92,7 +106,7 @@ namespace Orders.ViewModels
         }
         private void LoadData()
         {
-            Orders = new ObservableCollection<OrderViewModel>();
+           
             for (int i = 0; i < 5; i++)
             {
                 Orders.Add(new OrderViewModel()

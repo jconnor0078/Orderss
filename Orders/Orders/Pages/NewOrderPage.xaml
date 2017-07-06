@@ -27,10 +27,6 @@
                 BackgroundColor="White"></DatePicker>
 
             <Button
-                HeightRequest="50"
-                BorderRadius="25"
-                BackgroundColor="{StaticResource MainColor}"
-                TextColor="{StaticResource MenuFontColor}"
                 Text="Guardar"></Button>
 
         </StackLayout>
