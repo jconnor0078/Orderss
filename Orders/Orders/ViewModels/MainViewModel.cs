@@ -106,7 +106,7 @@ namespace Orders.ViewModels
         }
         private void LoadData()
         {
-           
+          
             for (int i = 0; i < 5; i++)
             {
                 Orders.Add(new OrderViewModel()
